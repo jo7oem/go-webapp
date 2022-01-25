@@ -15,6 +15,7 @@ type templateHandler struct {
 }
 
 func (t *templateHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	_ = r
 	t.once.Do(func() {
 		t.temple = template.Must(template.ParseFiles(filepath.Join("templates", t.filename)))
 	})
