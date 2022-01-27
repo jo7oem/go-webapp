@@ -22,7 +22,7 @@
         var msgBox=$("#chatbox textarea");
         var messages=$("#messages");
         $("#chatbox").submit(function (){
-            if (!msgBox.value){
+            if (!msgBox.val()){
                 return false;
             }
             if (!socket){
@@ -30,7 +30,7 @@
                 return false;
             }
             socket.send(msgBox.val());
-            msgBox.value("");
+            msgBox.val("");
             return false;
         });
         if (!window["WebSocket"]){
